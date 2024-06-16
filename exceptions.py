@@ -30,13 +30,24 @@
 #     else:
 #         break    
 # print(f'x is {x}')        
+# def main():
+#     x = getint()
+#     print(f'x is {x}')
+# def getint():
+#     while True:
+#         try:
+#             return int(input('what is x?'))
+#         except ValueError:
+#             print('x is not an integer')
+# main()
+
 def main():
-    x = getint()
+    x = get_int('whats x?' )
     print(f'x is {x}')
-def getint():
+def get_int(prompt):
     while True:
         try:
-            return int(input('what is x?'))
+            return int(input(prompt))
         except ValueError:
-            print('x is not an integer')
-main()
+            pass    
+main()        
