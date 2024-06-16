@@ -15,15 +15,15 @@ def transaction():
             print('invalid choice!')
 def withdrawal():
     amount = int(input('enter the amount you want to withdraw? '))
-    return amount
+    # return amount
     print(amount, ' has been deducted from your account')
 def deposit():
     acc_number = int(input('Enter the account number: '))
     send = int(input('enter the amount you want to deposit to ', acc_number))    
-    print('Sent successfully!')
+    print(send, 'Sent successfully!')
 def default():
     amount = int(input('enter the amount you want to withdraw? '))
-    return amount
+    # return amount
     print(amount, ' has been deducted from your account')
 
 pin()       
