@@ -44,7 +44,7 @@
 def main():
     x = get_int('whats x?' )
     print(f'x is {x}')
-def get_int(prompt):
+def get_int(prompt): #prompting user
     while True:
         try:
             return int(input(prompt))
