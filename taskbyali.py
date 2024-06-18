@@ -3,6 +3,6 @@ def main():
     calculate_sum(sum)
 def calculate_sum(n):
     for i in range(n):
-        n+=1
-    print("sum ", n)    
+       print("sum ", n*(n+1)/2)   
+     
 main()
