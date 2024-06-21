@@ -18,3 +18,13 @@ print("Welcome to password generator!")
 letter_ = int (input("How many letters do you want in your password? "))
 number_ = int(input("How many numbers do you want in your password? "))
 symbols_ = int(input("How many symbols? "))
+
+password = ""
+for char in range(1  , letter_ + 1):
+    password += random.choice(letters)
+for char in range(1, number_ + 1):
+    password+=random.choice(numbers)
+for char in range(1, symbols_ +1 ):
+    password+= random.choice(symbols)
+
+print(password)        
