@@ -1,4 +1,4 @@
-hangman_stages = [
+stages = [
     '''
   +---+
   |   |
