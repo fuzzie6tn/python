@@ -24,8 +24,8 @@ def check_answer(guess, a_followers, b_followers):
         return guess == "a"
     else:
         return guess == "b"
+print(logo)
 while game_should_continue:
-    print(logo)
     # Generate a random account from the game data
     accountA = accountB
     accountB = random.choice(data)
@@ -47,6 +47,7 @@ while game_should_continue:
     is_correct = check_answer(guess, a_follower_count, b_follower_count)
 
     clear()
+    print(logo)
     #give user feedback 
 
     if is_correct:
@@ -55,7 +56,3 @@ while game_should_continue:
     else :
         game_should_continue = False
         print(f"sorry, thats wrong. Final Score {score}") 
-
-
-
-
