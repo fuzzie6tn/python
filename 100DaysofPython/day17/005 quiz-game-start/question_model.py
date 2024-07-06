@@ -3,3 +3,5 @@ class Question:
         self.text = question_text
         self.answer = correct_answer
 
+    def __str__(self):
+        return self.text
