@@ -1,4 +1,7 @@
 from turtle import Turtle, Screen
+# import (keyword) turtle (module name)
+# import turtle
+# tim = turtle.Turtle()
 
 # Let's create an object
 tim = Turtle()
