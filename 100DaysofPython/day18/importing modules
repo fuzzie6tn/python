@@ -1,0 +1,25 @@
+# import (keyword) turtle (module name)
+# import turtle
+# tim = turtle.Turtle()
+''' this is ok when you are using one time to create the object '''
+# or
+
+# from(keyword) turtle(module) import(keyword) Turtle(thing in module)
+# we can simply write:
+# from turtle import Turtle
+# tim = Turtle() to create an object
+''' this is ok when using to create more than once '''
+# or
+
+# to import everything from the module you can simple use asteric *
+# from turtle import * (this will import everything) from turtle module
+
+# Aliasing module????
+import (keyword) turtle (module name) as (keyword) t (alias name) - the name we create. it will represent the whole name of module
+
+import turtle as t
+tim = t.Turtle()
+
+# installing modules
+pyCharm is smart enough to install the package when it doesnt recognize the module you have entered.
+there will be a red alert that will prompt it to install the package created by another user.
