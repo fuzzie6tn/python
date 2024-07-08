@@ -3,6 +3,10 @@ from turtle import Turtle, Screen
 # import turtle
 # tim = turtle.Turtle()
 
+# or
+
+# from(keyword) turtle(module) import(keyword) Turtle(thing in module)
+
 # Let's create an object
 tim = Turtle()
 tim.shape("turtle")
