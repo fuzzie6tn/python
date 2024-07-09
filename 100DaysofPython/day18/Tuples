@@ -1,0 +1,11 @@
+What are tuples??
+(1,4,9)
+
+Python tuples and how to generate random RGB colors:
+Tuples are ordered. Lists can be unordered.
+you can not change the values in tuples.
+my_tuple = (1,3,8)
+my_tuple[2] = 12
+this will not change the value. typeError
+cannot change. immutable.
+
