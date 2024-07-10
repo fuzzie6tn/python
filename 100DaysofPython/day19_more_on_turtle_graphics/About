@@ -7,3 +7,6 @@ games we are going to make:
 Event listeners: user presses a key and what will happen. (screen events)
 .listen() this allows the turtle screen to listen to the event and waiting for the event to trigger. like tapping
 on a key
+
+->Higher Order Function:
+A function taking another function and working with it.
