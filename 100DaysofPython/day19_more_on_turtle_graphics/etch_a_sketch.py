@@ -6,6 +6,8 @@
 # C key to clear drawing and put the turtle back in the center
 # that will be able to draw things
 
+# MY OWN CODE - YAYYYYYY
+
 """tim.home()-> move the turtle to the center
    tim.forwards()
    tim.backwards()
@@ -16,6 +18,7 @@ from turtle import Turtle, Screen
 
 tim = Turtle()
 
+
 def move_forwards():
     tim.forward(10)
 
@@ -25,11 +28,15 @@ def move_backwards():
 
 
 def move_left():
-    tim.left(10)
+    # tim.left(10)
+    new_heading = tim.heading() + 10  # both works the same
+    tim.setheading(new_heading)
 
 
 def move_right():
-    tim.right(10)
+    # tim.right(10)
+    new_heading = tim.heading() - 10  # both works the same
+    tim.setheading(new_heading)
 
 
 def clear_the_sketch():
