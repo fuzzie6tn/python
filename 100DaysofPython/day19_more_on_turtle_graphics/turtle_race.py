@@ -17,6 +17,7 @@ user_bet = screen.textinput(title="Make your bet", prompt="Which turtle will win
 colors = ["purple", "blue", "green", "yellow", "orange", "red"]
 y_positions = [-70, -40, -10, 20, 50, 80]
 all_turtles = []
+
 #  our turtle is 40 x 40 in size and the end of the edge is 250 to x-axis. so think about it. 250 - (40/2) = 230
 for turtle_index in range(0, 6):
     new_turtle = Turtle('turtle')
@@ -30,7 +31,7 @@ if user_bet:  # if user_bet exists then
 
 while is_race_on:
     for turtle in all_turtles:  # creating random distances for each turtle and moving them forward
-        if turtle.xcor()>230:
+        if turtle.xcor() > 230:
             winning_color = turtle.pencolor()
             if winning_color == user_bet:
                 print("You Win!")
