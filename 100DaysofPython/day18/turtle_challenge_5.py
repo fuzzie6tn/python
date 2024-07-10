@@ -24,6 +24,7 @@ def random_color():
 #     tim.tilt(50)
 #     tim.left(5)
 
+
 def draw_sprial(size_of_gap):
     for _ in range(int(360/size_of_gap)):
         tim.color(random_color())
