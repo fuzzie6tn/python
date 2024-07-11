@@ -14,3 +14,7 @@ total seven steps
 5. create a scoreboard
 6. detect collision with wall (game over)
 7. detect colliision with tail (game over)
+
+Snake body:
+three squares that will be next to each other horizontally
+coordinates should be kept in mind
