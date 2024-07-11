@@ -1,0 +1,16 @@
+-We are going to build snake game
+-Nokia 3310
+-Nokia snake game
+In the game:
+there will be a moving snake, it eats the food and it grows as it eats the food, make sure you are not getting
+tangled or hitting the wall
+
+BREAK THE PROBLEM:
+total seven steps
+1. create a snake body
+2. moving the snake
+3. control the snake
+4. detect collision with the food
+5. create a scoreboard
+6. detect collision with wall (game over)
+7. detect colliision with tail (game over)
