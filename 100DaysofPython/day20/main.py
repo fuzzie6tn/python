@@ -13,7 +13,7 @@ snake = Snake()
 game_is_on = True
 while game_is_on:
     screen.update()  # each update moves
-    time.sleep(0.1)  # 1 second delay
+    time.sleep(0.1)  # 1 second delayyyyy
 
     snake.move()
 screen.exitonclick()
