@@ -10,16 +10,16 @@ screen.tracer(0)
 snake = Snake()
 
 screen.listen()
-screen.onkey('Up')
-screen.onkey('Down')
-screen.onkey('Left')
-screen.onkey('Right')
+screen.onkey(snake.up, 'Up')
+screen.onkey(snake.down, 'Down')
+screen.onkey(snake.left, 'Left')
+screen.onkey(snake.right, 'Right')
 
 # move the snake
 game_is_on = True
 while game_is_on:
     screen.update()  # each update moves
-    time.sleep(0.1)  # 1 second delayyyyy
+    time.sleep(0.1)  # 1 second delay
 
     snake.move()
 
