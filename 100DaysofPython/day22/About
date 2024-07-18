@@ -1,0 +1,10 @@
+Pong game:
+Break down the problem
+-> create the screen
+-> create and move a paddle
+-> create another paddle
+-> create the ball and make it move
+-> detect the collision with wall and bounce
+-> detect collision with paddle
+-> detect when paddle misses
+-> keep score
