@@ -26,4 +26,10 @@ while game_is_on:
     screen.update()  # to turn on the game manually when tracer(0)
     ball.move()
 
+    # detect collision with the wall
+
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        # bounce back
+        ball.bounce()
+
 screen.exitonclick()
