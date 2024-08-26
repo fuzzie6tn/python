@@ -1,26 +1,45 @@
 from turtle import Turtle
 
-class ScoreBoard(Turtle):
+
+class Scoreboard(Turtle):
+
     def __init__(self):
         super().__init__()
-        self.color('white')
+        self.color("white")
         self.penup()
         self.hideturtle()
-        self.lScore = 0
-        self.rScore = 0
-        self.update_score()
+        self.l_score = 0
+        self.r_score = 0
+        self.update_scoreboard()
 
-    def update_score(self):
+    def update_scoreboard(self):
         self.clear()
-        self.goto(-165, 265)
-        self.write(self.lScore, align='center', font=('Arial', 16, 'bold'))
-        self.goto(165, 265)
-        self.write(self.rScore, align='center', font=('Arial', 16, 'bold'))
+        self.goto(-100, 190)
+        self.write(self.l_score, align="center", font=("Courier", 50, "normal"))
+        self.goto(100, 190)
+        self.write(self.r_score, align="center", font=("Courier", 50, "normal"))
 
     def l_point(self):
-        self.lScore += 1
-        self.update_score()
+        self.l_score += 1
+        self.update_scoreboard()
 
     def r_point(self):
-        self.rScore += 1
-        self.update_score()
+        self.r_score += 1
+        self.update_scoreboard()
+
+
+class SideSeparation(Turtle):
+
+    def __init__(self):
+        super().__init__()
+        self.color("white")
+        self.penup()
+        self.goto(0, -310)
+        self.setheading(90)
+        self.draw_line()
+
+    def draw_line(self):
+        self.pendown()
+        self.fd(10)
+        self.penup()
+        self.fd(10)
