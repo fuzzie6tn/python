@@ -9,6 +9,8 @@ y_positions = [-70, -40, -10, 20, 50, 80]
 
 class CarManager:
     all_cars = []
+    car_speed = STARTING_MOVE_DISTANCE
+
     def __init__(self):
         super().__init__()
 
@@ -25,5 +27,7 @@ class CarManager:
 
     def move_cars(self):
         for car in self.all_cars:
-            car.backward(STARTING_MOVE_DISTANCE)
+            car.backward(self.car_speed)
 
+    def level_up(self):
+        self.car_speed += MOVE_INCREMENT
