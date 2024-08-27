@@ -11,8 +11,9 @@ class CarManager:
     def __init__(self):
         super().__init__()
         for turtle_index in range(0, 6):
-            new_turtle = Turtle('turtle')
+            new_turtle = Turtle('square')
+            new_turtle.width(10)
             new_turtle.penup()
             new_turtle.color(COLORS[turtle_index])
-            new_turtle.goto(x=230, y=y_positions[turtle_index])
+            new_turtle.goto(x=280, y=y_positions[turtle_index])
             all_turtles.append(new_turtle)

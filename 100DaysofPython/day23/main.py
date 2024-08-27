@@ -14,6 +14,7 @@ screen.tracer(0) # turned off the tracer
 player = Player()
 car = CarManager()
 
+
 screen.listen()
 screen.onkey(player.go_up, "Up")
 
