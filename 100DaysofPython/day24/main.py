@@ -1,4 +1,4 @@
-with open("/home/fazidev/Desktop/file.txt") as file:
+with open("../../../Desktop/file.txt") as file:
     content = file.read()
     print(content)
 
