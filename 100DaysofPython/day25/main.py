@@ -30,4 +30,8 @@ import pandas
 #Get data from row
 data = pandas.read_csv("weather_data.csv")
 # print(data[data.day] == "Monday")
-print(data[data.temp == data.temp.max()])
+# print(data[data.temp == data.temp.max()])
+monday = data[data.day == "Monday"]
+monday_temp = int(monday.temp)
+monday_temp_f = monday.temp * 9 / 5 + 32
+print(monday_temp_f)
