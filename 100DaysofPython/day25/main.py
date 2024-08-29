@@ -31,7 +31,18 @@ import pandas
 data = pandas.read_csv("weather_data.csv")
 # print(data[data.day] == "Monday")
 # print(data[data.temp == data.temp.max()])
-monday = data[data.day == "Monday"]
-monday_temp = int(monday.temp)
-monday_temp_f = monday.temp * 9 / 5 + 32
-print(monday_temp_f)
+# monday = data[data.day == "Monday"]
+# monday_temp = int(monday.temp)
+# monday_temp_f = monday.temp * 9 / 5 + 32
+# print(monday_temp_f)
+
+# create a dataframe from scratch
+
+data_dict = {
+    "students": ["Amy", "James", "Angela"],
+    "scores": [76,56,88]
+}
+# so how would we create data frame from this dictionary
+
+dat = pandas.DataFrame(data_dict)
+dat.to_csv("new_file.csv")
