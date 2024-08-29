@@ -12,4 +12,9 @@
 #            temperature.append(row[1])
 #     print(temperature)
 
+# 3 lines vs 8 lines - see the difference between not using pandas and using panadas
+
 import pandas
+
+data = pandas.read_csv("weather_data.csv")
+print(data["temp"])
