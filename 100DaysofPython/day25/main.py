@@ -17,4 +17,13 @@
 import pandas
 
 data = pandas.read_csv("weather_data.csv")
-print(data["temp"])
+# print(data["temp"])
+data_dict = data.to_dict()
+print(f"Converted into dict: \n{data_dict}")
+
+data_list = data["temp"].to_list()
+print(f"Converted into list: \n{data_list}")
+
+# avg = sum(data_list)/len(data_list)
+avg = data["temp"].mean()
+print(f"Average temperature: {avg}")
