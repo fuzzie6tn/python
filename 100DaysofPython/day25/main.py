@@ -14,16 +14,20 @@
 
 # 3 lines vs 8 lines - see the difference between not using pandas and using panadas
 
+#
+# # print(data["temp"])
+# data_dict = data.to_dict()
+# print(f"Converted into dict: \n{data_dict}")
+#
+# data_list = data["temp"].to_list()
+# print(f"Converted into list: \n{data_list}")
+#
+# # avg = sum(data_list)/len(data_list)   .mean()
+# avg = data["temp"].max()
+# print(f"Average temperature: {avg}")
 import pandas
 
+#Get data from row
 data = pandas.read_csv("weather_data.csv")
-# print(data["temp"])
-data_dict = data.to_dict()
-print(f"Converted into dict: \n{data_dict}")
-
-data_list = data["temp"].to_list()
-print(f"Converted into list: \n{data_list}")
-
-# avg = sum(data_list)/len(data_list)
-avg = data["temp"].mean()
-print(f"Average temperature: {avg}")
+# print(data[data.day] == "Monday")
+print(data[data.temp == data.temp.max()])
