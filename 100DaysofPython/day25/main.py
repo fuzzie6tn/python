@@ -49,7 +49,7 @@
 
 import pandas
 
-# count the grey, red squirreals
+# count the grey, red squirrels
 
 data = pandas.read_csv('2018_Central_Park_Squirrel_Census_-_Squirrel_Data_20240830.csv')
 grey_squirrel = len(data[data["Primary Fur Color"]=="Gray"])
