@@ -13,3 +13,10 @@ print(new_list2)
 name = "Fazila"
 new_list3 = [letter for letter in name]
 print(new_list3)
+
+new_list = [r * 2 for r in range(1,5)]
+print(new_list)
+
+names = ["fazila", "bethany", "ale", "memememee"]
+name_upper = [name.upper() for name in names if len(name)>= 5]
+print(name_upper)
