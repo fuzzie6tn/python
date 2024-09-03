@@ -2,6 +2,7 @@ import tkinter
 
 window = tkinter.Tk()
 window.title("Gui")
+window.configure(background='white')
 window.minsize(width=500, height=300)
 
 # label
