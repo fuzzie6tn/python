@@ -23,4 +23,11 @@ input = tkinter.Entry(width = 10)
 input.pack()
 input.get()
 
+# spinbox
+def spinbox_used():
+    print(spinbox.get())
+
+spinbox = tkinter.Spinbox(from_=0, to=100, command=spinbox_used, width=5)
+spinbox.pack()
+
 window.mainloop()
