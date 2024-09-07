@@ -34,9 +34,14 @@ canvas.create_text(100,133, text="00:00", fill="white", font=(FONT_NAME, 35, "bo
 canvas.grid(column=1, row=1)
 
 # Buttons
-start_button = Button(text="Start")
+start_button = Button(text="Start", bg="white", highlightthickness=0, borderwidth=0)
 start_button.grid(column=0, row=2)
 
-reset_button = Button(text="Reset")
+reset_button = Button(text="Reset",bg="white",highlightthickness=0, borderwidth=0)
 reset_button.grid(column=2, row=2)
+
+# Checkmark
+check_mark_label = Label(text="✔", font=("Arial", 15, "bold"), fg=GREEN, bg=YELLOW)
+check_mark_label.grid(column=1, row=3)
+
 window.mainloop()
