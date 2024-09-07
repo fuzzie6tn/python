@@ -30,6 +30,7 @@ kilometer_label.grid(row = 1, column = 2)
 
 # Button
 calculate_button = Button(text="Calculate", command=miles_to_kilometers)
+calculate_button.grid(row = 2, column = 1)
 
 
 
