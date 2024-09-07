@@ -1,7 +1,4 @@
-import tkinter
-from tkinter.ttk import Button
-
-from typing_extensions import IntVar
+from tkinter import *
 
 window = tkinter.Tk()
 window.title("Mile to Kilo Mile")
