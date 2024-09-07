@@ -11,7 +11,7 @@ window.minsize(width=500, height=300)
 
 # label
 my_label = tkinter.Label(window, text="Hello World", font=("Calibri", 20, "normal"))
-my_label.pack() # this will automatically bring it to the center
+# my_label.pack() # this will automatically bring it to the center
 my_label.grid(column=0, row=0)
 # button
 def button_clicked():
