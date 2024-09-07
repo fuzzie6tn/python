@@ -2,8 +2,8 @@ from tkinter import *
 
 window = Tk()
 window.title("Mile to Kilo Mile")
-window.configure(padx=15, pady=15)
-window.minsize(width=150, height=100)
+window.configure(padx=20, pady=20)
+# window.minsize(width=150, height=100)
 
 # Entry
 mile_input = Entry(width = 10)
@@ -24,9 +24,9 @@ kilometer_label = Label(text ="Km")
 kilometer_label.grid(row = 1, column = 2)
 
 #Button
-def calculate():
-
-calculate_button = Button(text="Calculate", command=calculate)
+# def calculate():
+#
+# calculate_button = Button(text="Calculate", command=calculate)
 
 
 
