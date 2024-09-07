@@ -28,8 +28,9 @@ text_4 = tkinter.Label(text = "Km")
 text_4.grid(row = 1, column = 2)
 
 #Button
+def calculate():
 
-
+button = tkinter.Button(text="Calculate", command=calculate)
 
 
 
