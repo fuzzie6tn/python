@@ -3,7 +3,7 @@ from tkinter import *
 window = Tk()
 window.title("Mile to Kilo Mile")
 window.configure(padx=15, pady=15)
-# window.minsize(width=150, height=100)
+window.minsize(width=150, height=100)
 
 # Entry
 mile_input = Entry(width = 10)
