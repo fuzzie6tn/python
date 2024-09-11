@@ -14,7 +14,7 @@ WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
-timer = None
+timer = ""
 # ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
     window.after_cancel(timer)
@@ -42,7 +42,7 @@ def start_timer():
         count_down(short_break_sec)
         timer_label.config(text="Break", fg=PINK)
     else:
-        count_down(1 * 60)
+        count_down(WORK_MIN * 60)
         timer_label.config(text="Work", fg=GREEN)
 
 
