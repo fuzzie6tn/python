@@ -32,8 +32,8 @@ def reset_timer():
 # ---------------------------- Stop MECHANISM ------------------------------- #
 def pause_timer():
     global paused
-    if paused == True:
-        # window.after_cancel(timer)
+    if not paused:
+        window.after_cancel(timer)
         start_button.config(text="Pause")
         title_label.config(text="Paused", fg="Blue")
 # ---------------------------- TIMER MECHANISM ------------------------------- #
@@ -45,6 +45,7 @@ def start_timer():
     short_break_sec = SHORT_BREAK_MIN * 60
     long_break_sec = LONG_BREAK_MIN * 60
 
+
     if reps % 8 == 0:
         count_down(long_break_sec)
         title_label.config(text="Break", fg=RED)
@@ -54,6 +55,7 @@ def start_timer():
     else:
         count_down(WORK_MIN * 60)
         title_label.config(text="Work", fg=GREEN)
+
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
@@ -73,8 +75,9 @@ def count_down(count):
         work_sessions = math.floor(reps/2)
         for i in range(work_sessions):
             marks+="✔"
-
         check_mark_label.config(text=marks)
+
+    pause_timer()
 
 
 # ---------------------------- UI SETUP ------------------------------- #
