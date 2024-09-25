@@ -1,11 +1,48 @@
 from tkinter import *
 from tkinter import messagebox
-
-from docutils.nodes import title
-from docutils.parsers.rst.directives.misc import Title
+import random
+# import pyperclip
 
 
 # ------------ Password generate -------------------- #
+
+def generate_password():
+
+    letters = [
+        "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", 'K', "L", 'M', 'N', "O", 'P', 'Q', "R", 'S', 'T', 'U', "V", "W", 'X'," Y",' Z'
+        , "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","a","v","w","x","y","z"
+
+    ]
+    numbers = [
+        "0","1","2","3","4","5","6","7","8","9",
+    ]
+    symbols = [
+        "!","-","+","@","$","#",")","(","%","|",
+    ]
+    nr_letters = random.randint(8,10)
+    nr_symbols = random.randint(2,4)
+    nr_numbers = random.randint(2,4)
+
+    password_letters = [random.choice(letters) for _ in range(nr_letters)]
+    # for char in range(nr_letters):
+    #     password_list.append(random.choice(letters))
+    password_symbol = [ random.choice(symbols) for _ in range(nr_symbols)]
+    # for char in range(nr_symbols):
+    #     password_list.append(random.choice(symbols))
+    password_number = [random.choice(symbols) for _ in range(nr_numbers)]
+    # for char in range(nr_numbers):
+    #     password_list.append(numbers)
+
+    password_list = password_letters + password_symbol + password_number
+
+    random.shuffle(password_list)
+    password = "".join(password_list)
+    # password = ""
+    # for char in password_list:
+    #     password+=char
+    pass_entry.insert(0, password)
+    # pyperclip.copy(password)
+    # print(f'Your password is: {password}')
 
 # ----------- Save Password ------------------------- #
 def save():
@@ -13,13 +50,17 @@ def save():
     email = email_entry.get()
     password = pass_entry.get()
 
-    is_ok = messagebox.askokcancel(title=website, message=f'These are the details entered:\nEmail: {email}\nPassword: {password}\nIs it ok to save?')
-    if is_ok:
-        with open("data.txt", "a") as data_file:
-            data_file.write(f"{website} | {email} | {password}\n")
-            website_entry.delete(0, END)
-            pass_entry.delete(0, END)
-            email_entry.delete(0, END)
+    if len(website) == 0 or len(password)==0 or len(email)==0:
+        messagebox.showinfo(title='Oops', message='Please don\'t leave any entry empty!')
+    else:
+        is_ok = messagebox.askokcancel(title=website, message=f'These are the details entered:\nEmail: {email}\nPassword: {password}\nIs it ok to save?')
+        if is_ok:
+            with open("data.txt", "a") as data_file:
+                data_file.write(f"{website} | {email} | {password}\n")
+                website_entry.delete(0, END)
+                pass_entry.delete(0, END)
+                email_entry.delete(0, END)
+
 
 # Create window
 window = Tk()
@@ -51,7 +92,7 @@ pass_entry = Entry(width=28)
 pass_entry.grid(column=1, row=3)
 
 # Buttons
-generate_button = Button(text="Generate Password", bg="white",width=15)
+generate_button = Button(text="Generate Password", bg="white",width=15, command=generate_password)
 generate_button.grid(column=2, row=3,padx=(0, 10))
 
 add_button = Button(text="Add", width=41, bg="white",command=save)
