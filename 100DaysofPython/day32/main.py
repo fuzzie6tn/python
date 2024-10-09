@@ -27,14 +27,13 @@ password = "trlpvnxratypoxap"
 now = dt.datetime.now()
 week_day = now.weekday()
 
-if week_day == 3: # Monday
+if week_day == 2:
     with open("quotes.txt", "r") as quote_file:
         quotes = quote_file.readlines()
         quote = random.choice(quotes)
+        print(quote)
 
-    print(quote)
-
-        with smtplib.SMTP("smtp.gmail.com") as connection:
+    with smtplib.SMTP("smtp.gmail.com") as connection:
             connection.starttls()
             connection.login(user=my_email, password=password)
             connection.sendmail(from_addr=my_email,to_addrs=my_email,msg=f"Subject: Quote of the day\n\nSending you a random quote from my list of quotes\n{quote}")
