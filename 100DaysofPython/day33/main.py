@@ -18,20 +18,30 @@ from datetime import datetime
 MY_LAT = 30.375320
 MY_LONG = 69.345116
 
-parameters = {
-    "lat": MY_LAT,
-    "lng": MY_LONG,
-    "formatted": 0,
-}
+def is_iss_overhead():
+    response = requests.get(url="http://api.open-notify.org/iss-now.json")
+    response.raise_for_status()
+    data = response.json()
 
-response = requests.get("https://api.sunrise-sunset.org/json" , params = parameters)
-response.raise_for_status()
-data = response.json()
-sunrise = data["results"]["sunrise"].split('T')[1].split(":")[0]
-sunset = data["results"]["sunset"].split('T')[1].split(":")[0]
+    iss_longitude = data["iss_position"]["longitude"]
+    iss_latitude = data["iss_position"]["latitude"]
 
-time_now = datetime.now()
+    if MY_LAT-5 <= iss_latitude <=  MY_LAT+5 and MY_LONG-5 <= iss_longitude <= MY_LONG+5:
+        return True
 
-print(sunrise)
-print(sunset)
-print(time_now.hour)
+def is_night():
+    parameters = {
+        "lat": MY_LAT,
+        "lng": MY_LONG,
+        "formatted": 0,
+    }
+    response = requests.get("https://api.sunrise-sunset.org/json" , params = parameters)
+    response.raise_for_status()
+    data = response.json()
+    sunrise = int(data["results"]["sunrise"].split('T')[1].split(":")[0])
+    sunset = int(data["results"]["sunset"].split('T')[1].split(":")[0])
+
+    time_now = datetime.now().hour
+
+    if time_now>=sunset or time_now<=sunrise:
+        return True # its dark
