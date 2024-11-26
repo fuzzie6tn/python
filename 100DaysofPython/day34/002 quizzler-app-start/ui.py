@@ -4,30 +4,30 @@ THEME_COLOR = "#375362"
 
 class QuizInterface:
     def __init__(self):
-        self.window = Tk()
-        self.window.title("Quizzler")
-        self.window.config(padx=20, pady=20, bg=THEME_COLOR)
+        self.window = Tk() # sab se pehle window banate hain
+        self.window.title("Quizzler") # window ko title dia
+        self.window.config(padx=20, pady=20, bg=THEME_COLOR) # config method k zariye ham ne padding of bg color dia
 
-        self.score_label = Label(text="Score: 0",bg=THEME_COLOR, fg="white")
-        self.score_label.grid(row=0,column=1)
+        self.score_label = Label(text="Score: 0",bg=THEME_COLOR, fg="white") # Label banaya (text)
+        self.score_label.grid(row=0,column=1) # isko ham ne grid k zariye place kr diya
 
-        self.canvas = Canvas(width=300, height=250, bg= "white")
-        self.question_text = self.canvas.create_text(
-            150,
-            125,
+        self.canvas = Canvas(width=300, height=250, bg= "white") # canvas banaya usko height width di
+        self.question_text = self.canvas.create_text(  # canvas k andr text banaya_ create_text() ko use kr k
+            150, # ye lazmi hai
+            125, # ye bhi lazmi hai
             text="Some Question",
             fill=THEME_COLOR,
             font= ("Arial", 20, "italic")
         )
-        self.canvas.grid(row=1, column=0, columnspan=2, pady=50)
+        self.canvas.grid(row=1, column=0, columnspan=2, pady=50) # canvas ko place kkiya
 
-        true_image = PhotoImage(file="images/true.png")
-        self.true_button = Button(image=true_image, highlightthickness=0)
-        self.true_button.grid(row=2, column=0)
+        true_image = PhotoImage(file="images/true.png") # PhotoImage() ko use kr k photo banya
+        self.true_button = Button(image=true_image, highlightthickness=0) # Button bnaya or or k andr wahi image dala
+        self.true_button.grid(row=2, column=0) # grid
 
-        false_image = PhotoImage(file="images/false.png")
-        self.false_button = Button(image=false_image, highlightthickness=0)
-        self.false_button.grid(row=2, column=1)
+        false_image = PhotoImage(file="images/false.png") # false image bnaya
+        self.false_button = Button(image=false_image, highlightthickness=0) # button k andr dala
+        self.false_button.grid(row=2, column=1) # gird
 
 
         self.window.mainloop()
