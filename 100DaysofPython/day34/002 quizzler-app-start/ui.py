@@ -1,9 +1,12 @@
 from tkinter import *
+from quiz_brain import QuizBrain
 
 THEME_COLOR = "#375362"
 
 class QuizInterface:
-    def __init__(self):
+    def __init__(self, quiz_brain:QuizBrain):
+        self.quiz = quiz_brain
+
         self.window = Tk() # sab se pehle window banate hain
         self.window.title("Quizzler") # window ko title dia
         self.window.config(padx=20, pady=20, bg=THEME_COLOR) # config method k zariye ham ne padding of bg color dia
@@ -15,6 +18,7 @@ class QuizInterface:
         self.question_text = self.canvas.create_text(  # canvas k andr text banaya_ create_text() ko use kr k
             150, # ye lazmi hai
             125, # ye bhi lazmi hai
+            width=280,
             text="Some Question",
             fill=THEME_COLOR,
             font= ("Arial", 20, "italic")
@@ -29,5 +33,10 @@ class QuizInterface:
         self.false_button = Button(image=false_image, highlightthickness=0) # button k andr dala
         self.false_button.grid(row=2, column=1) # gird
 
+        self.get_next_question()
 
         self.window.mainloop()
+    def get_next_question(self):
+        q_text = self.quiz.next_question()
+        self.canvas.itemconfig(self.question_text, text=q_text)
+
