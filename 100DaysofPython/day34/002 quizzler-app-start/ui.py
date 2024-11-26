@@ -26,17 +26,22 @@ class QuizInterface:
         self.canvas.grid(row=1, column=0, columnspan=2, pady=50) # canvas ko place kkiya
 
         true_image = PhotoImage(file="images/true.png") # PhotoImage() ko use kr k photo banya
-        self.true_button = Button(image=true_image, highlightthickness=0) # Button bnaya or or k andr wahi image dala
+        self.true_button = Button(image=true_image, highlightthickness=0, command=self.true_pressed) # Button bnaya or or k andr wahi image dala
         self.true_button.grid(row=2, column=0) # grid
 
         false_image = PhotoImage(file="images/false.png") # false image bnaya
-        self.false_button = Button(image=false_image, highlightthickness=0) # button k andr dala
+        self.false_button = Button(image=false_image, highlightthickness=0, command=self.false_pressed) # button k andr dala
         self.false_button.grid(row=2, column=1) # gird
 
         self.get_next_question()
 
         self.window.mainloop()
+
     def get_next_question(self):
         q_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text=q_text)
 
+    def true_pressed(self):
+        pass
+
+    def false_pressed(self):
