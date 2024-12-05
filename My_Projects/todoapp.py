@@ -1,11 +1,18 @@
 from tkinter import *
-from tkinter import font
+from tkinter import font, messagebox
 
 def add_task():
-    pass
+    task = input_task.get()
+    if task.strip():
+        list_box.insert(END, task)
+        input_task.delete(0,END)
+    else:
+        messagebox.showwarning(title="Empty", message="Input error, empty task")
+
 
 def delete_task():
-    pass
+    # select the particular task and press delete_task to delete it
+
 
 def delete_all_task():
     pass
@@ -36,8 +43,8 @@ input_task = Entry(width=23)
 input_task.grid(column=0, row=2, pady=10, sticky="w")
 
 # Buttons
-add_button = Button(text="Add Task", width=20)
-add_button.grid(column=0, row=3, pady=10, sticky="w", command=add_task)
+add_button = Button(text="Add Task", width=20, command=add_task)
+add_button.grid(column=0, row=3, pady=10, sticky="w")
 
 delete_button = Button(text="Delete Task", width=20, command=delete_task)
 delete_button.grid(column=0, row=4, pady=10, sticky="w")
