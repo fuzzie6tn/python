@@ -5,9 +5,7 @@
 #
 # OWM_endpoint = "https://api.openweathermap.org/data/2.5/onecall"
 # api_key = "3fc8982ac5d3a42b86c1b7b98927dd8a"
-# auth_id = "AC374d00f3d9b65735e032c4c4f99c6e81"
-# auth_t = "ca0f8b2735e7bf68a23ae2f172422d23"
-#
+
 # weather_params = {
 #     "lat": 30.375320,
 #     "lon": 69.345116,
