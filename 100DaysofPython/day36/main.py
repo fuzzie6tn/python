@@ -11,7 +11,7 @@ STOCK_API_KEY = "26W0BL08FVG75CFF"
 NEWS_API_KEY = "775f69984aff4121b21d5afc69b125d6"
 
 TWILIO_SID = "AC374d00f3d9b65735e032c4c4f99c6e81"
-TWILIO_pass = "c23162f3ca0265e57cb6e5f09b9b3ff9"
+
 
 # Get yesterday's stock price
 stock_params = {
@@ -71,7 +71,7 @@ if abs(percentage_diff) > 5:
             message = client.messages.create(
                 body=article,
                 from_="+17752788860",  # Twilio number
-                to="+923275507278",   # Your phone number
+                to="",   # Your phone number
             )
             print(f"Message sent: {message.sid}")
         except Exception as e:
