@@ -33,12 +33,12 @@ headers= {
 # response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
 # print(response.text)
 
-post_pixel_endpoint=f"{pixela_endpoint}{USERNAME}/graphs/{GRAPH_ID}"
+post_pixel_endpoint=f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
 
-parameters={
-    "date": "20241212",
-    "quantity": "5"
+pixela_data={
+    "date": "20241211",
+    "quantity": "9.9"
 }
 
-response = requests.post(url=post_pixel_endpoint, headers=headers, json=post_pixel_endpoint)
+response = requests.post(url=post_pixel_endpoint, headers=headers, json=pixela_data)
 print(response.text)
