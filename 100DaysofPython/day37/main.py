@@ -5,7 +5,7 @@ USERNAME= "fazilaroshan"
 TOKEN="hahfiuwe7373s33"
 pixela_endpoint = "https://pixe.la/v1/users"
 GRAPH_ID="graph1"
-date_today= datetime.now()
+DATE_TODAY= datetime(year=2020, month=7, day=23)
 
 user_params= {
     "token": "hahfiuwe7373s33",
@@ -33,11 +33,12 @@ headers= {
 # response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
 # print(response.text)
 
+
 post_pixel_endpoint=f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
 
 pixela_data={
-    "date": "20241211",
-    "quantity": "9.9"
+    "date": DATE_TODAY.strftime("%Y%m%d"),
+    "quantity": "15"
 }
 
 response = requests.post(url=post_pixel_endpoint, headers=headers, json=pixela_data)
