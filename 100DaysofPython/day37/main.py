@@ -30,8 +30,9 @@ graph_config= {
 headers= {
     "X-USER-TOKEN": TOKEN
 }
-# response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
-# print(response.text)
+
+response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
+print(response.text)
 
 
 post_pixel_endpoint=f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
@@ -45,5 +46,9 @@ put_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{DATE_TODAY.strf
 new_pixel_data={
     "quantity": "10"
 }
-response = requests.put(url=put_endpoint, headers=headers, json=new_pixel_data)
-print(response.text)
+# response = requests.put(url=put_endpoint, headers=headers, json=new_pixel_data)
+# print(response.text)
+
+remove_endpoint= f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{DATE_TODAY.strftime("%Y%m%d")}"
+# response = requests.delete(url=remove_endpoint, headers=headers)
+# print(response.text)
