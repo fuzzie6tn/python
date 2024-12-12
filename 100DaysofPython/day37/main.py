@@ -5,7 +5,7 @@ USERNAME= "fazilaroshan"
 TOKEN="hahfiuwe7373s33"
 pixela_endpoint = "https://pixe.la/v1/users"
 GRAPH_ID="graph1"
-DATE_TODAY= datetime(year=2020, month=7, day=23)
+DATE_TODAY= datetime(year=2024, month=12, day=11)
 
 user_params= {
     "token": "hahfiuwe7373s33",
@@ -26,7 +26,7 @@ graph_config= {
     "color": "ajisai",
 }
 #
-# # authenticate ourself through header
+# # authenticate our self through header
 headers= {
     "X-USER-TOKEN": TOKEN
 }
@@ -40,6 +40,10 @@ pixela_data={
     "date": DATE_TODAY.strftime("%Y%m%d"),
     "quantity": "15"
 }
+put_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{DATE_TODAY.strftime("%Y%m%d")}"
 
-response = requests.post(url=post_pixel_endpoint, headers=headers, json=pixela_data)
+new_pixel_data={
+    "quantity": "10"
+}
+response = requests.put(url=put_endpoint, headers=headers, json=new_pixel_data)
 print(response.text)
