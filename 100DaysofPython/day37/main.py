@@ -30,17 +30,14 @@ graph_config= {
 headers= {
     "X-USER-TOKEN": TOKEN
 }
-
-response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
-print(response.text)
-
-
 post_pixel_endpoint=f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
 
 pixela_data={
     "date": DATE_TODAY.strftime("%Y%m%d"),
-    "quantity": "15"
+    "quantity": input("How much coding you did today?")
 }
+response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
+print(response.text)
 put_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{DATE_TODAY.strftime("%Y%m%d")}"
 
 new_pixel_data={
