@@ -19,4 +19,10 @@ article_upvote = [score.getText().split()[0] for score in soup.find_all("span", 
 
 # print(article_texts)
 # print(article_links)
-print(article_upvote[0])
+# print(article_upvote)
+
+# highest upvotes ka text or link download karna hai
+largest_number= max(article_upvote)
+largest_index= article_upvote.index(largest_number)
+print(article_texts[largest_index])
+print(article_links[largest_index])
