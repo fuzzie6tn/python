@@ -22,3 +22,4 @@ movies=movie_titles[::-1]
 with open("movies.txt", mode="w") as file:
     for movie in movies:
         file.write(f"{movie}\n")
+
