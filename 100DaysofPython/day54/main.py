@@ -12,3 +12,11 @@ def hello_world():
 
 if __name__ == "__main__":
     app.run()
+
+
+# python decorator function
+#
+# def decorator_function(function):
+#     def wrapper_function():
+#         function()
+#     return wrapper_function
