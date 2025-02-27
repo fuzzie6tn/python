@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs</title>
+</head>
+<body>
+    {% for blog_post in all_posts: %}
+         <h1>{{ blog_post["job_posting"] }}</h1>
+         <h2>{{ blog_post["subtitle"] }}</h2>
+
+    {% endfor %}
+
+</body>
+</html>
