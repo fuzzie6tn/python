@@ -28,9 +28,10 @@ def guess(name):
 
     return render_template("guess.html", name=name, gender=gender,age=age) # extracted from genederize.io
 
-@app.route('/blog')
+@app.route('/blog/<number>')
 
-def blog(): #fetch all the blogs from the URL
+def get_blog(number): #fetch all the blogs from the URL
+    print(number)
     blog_url = "https://api.npoint.io/5abcca6f4e39b4955965"
     blog_response = requests.get(blog_url)
     all_posts = blog_response.json()
