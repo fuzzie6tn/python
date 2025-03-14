@@ -1,5 +1,6 @@
 from turtle import Turtle
-import random
+# import random
+
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0), (40, 0)]
 MOVE_DISTANCE = 20
 UP = 90

@@ -1,0 +1,64 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Add A New Cafe{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <h1>Add a new cafe into the database</h1>
+
+      <!-- ✅ Ensure the form is linked to "/add" and uses POST method -->
+      <form method="POST" action="{{ url_for('add_cafe') }}">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+          {{ form.cafe.label }}
+          {{ form.cafe(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.location.label }}
+          {{ form.location(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.open_time.label }}
+          {{ form.open_time(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.close_time.label }}
+          {{ form.close_time(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.coffee_rating.label }}
+          {{ form.coffee_rating(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.wifi_rating.label }}
+          {{ form.wifi_rating(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.power_rating.label }}
+          {{ form.power_rating(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.submit(class="btn btn-primary") }}
+        </div>
+      </form>
+
+      {% if msg %}
+        <p class="alert alert-success">{{ msg }}</p>
+      {% endif %}
+
+      <p class="space-above"><a href="{{ url_for('cafes') }}">See all cafes</a></p>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
