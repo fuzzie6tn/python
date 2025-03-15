@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add Book</title>
-</head>
-<body>
-    <form action="" method="POST">
-        <label>Book Name</label>
-        <input type="text">
-        <label>Book Author</label>
-        <input type="text">
-        <label>Rating</label>
-        <input type="text">
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Add A New Book{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Add a New Book</h1>
+    <form action="{{ url_for('add') }}" method="POST">
+        <label for="title">Book Title:</label>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required><br>
+
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" name="rating" step="0.1" min="0" max="10" required><br>
+
         <button type="submit">Add Book</button>
     </form>
-</body>
-</html>
+</div>
+{% endblock %}

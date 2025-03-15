@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/100DaysofPython/day25/2018_Central_Park_Squirrel_Census_-_Squirrel_Data_20240830.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/100DaysofPython/day62/001 Starting-Files-coffee-and-wifi/cafe-data.csv">
           <value>
             <Attribute>
